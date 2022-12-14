@@ -411,7 +411,7 @@ cfg_io_source! {
 
 #[derive(Debug)]
 pub struct SelectorInner {
-    cp: Arc<CompletionPort>,
+    pub(super) cp: Arc<CompletionPort>,
     update_queue: Mutex<VecDeque<Pin<Arc<Mutex<SockState>>>>>,
     is_polling: AtomicBool,
 }
